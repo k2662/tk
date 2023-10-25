@@ -43,8 +43,8 @@ jobs:
         working-directory: tcl/unix
       - name: Build & Install Tcl
         run: |
-          make binaries libraries install
-          make shell SCRIPT="$VER_PATH $GITHUB_ENV"
+          make binaries libraries install -j4
+          make shell SCRIPT="$VER_PATH $GITHUB_ENV" -j4
         working-directory: tcl/unix
       - name: Configure Tk
         run: |
